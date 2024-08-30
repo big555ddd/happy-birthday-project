@@ -1,29 +1,29 @@
-# flyctl launch added from .gitignore
+# Fly.io specific ignores
+fly.toml
+
 # Nuxt dev/build outputs
-**\.output
-**\.data
-**\.nuxt
-**\.nitro
-**\.cache
-**\dist
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
 
 # Node dependencies
-**\node_modules
+node_modules
 
 # Logs
-**\logs
-**\*.log
+logs
+*.log
 
 # Misc
-**\.DS_Store
-**\.fleet
-**\.idea
+.DS_Store
+.fleet
+.idea
 
 # Local env files
-**\.env
-**\.env.*
-!**\.env.example
+.env
+.env.*
 
-# flyctl launch added from node_modules\tailwindcss\stubs\.gitignore
-!node_modules\tailwindcss\stubs\**\*
-fly.toml
+# Allow specific files back in (for Tailwind CSS)
+!node_modules/tailwindcss/stubs/**/*

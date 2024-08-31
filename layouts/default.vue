@@ -23,6 +23,7 @@
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Italianno&family=Inter:wght@400;700&display=swap');
+import table 
 
 .header-container {
   background-color: #094037;

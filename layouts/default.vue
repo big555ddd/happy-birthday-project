@@ -7,7 +7,7 @@
     </header>
     <div class="nav-wrapper">
       <nav class="nav-links">
-        <nuxt-link to="/" class="nav-link">Home</nuxt-link>
+        <nuxt-link to="/" class="nav-link">HOner</nuxt-link>
         <nuxt-link to="/about" class="nav-link">About</nuxt-link>
         <nuxt-link to="/account" class="nav-link">Account</nuxt-link>
         <nuxt-link to="/themes" class="nav-link">Themes</nuxt-link>

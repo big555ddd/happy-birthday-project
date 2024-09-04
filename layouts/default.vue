@@ -12,6 +12,9 @@
         <nuxt-link to="/account" class="nav-link">Account</nuxt-link>
         <nuxt-link to="/themes" class="nav-link">Themes</nuxt-link>
         <nuxt-link to="/contact" class="nav-link">Contact Us</nuxt-link>
+        <nuxt-link to="/contact" class="nav-link">Contact Us</nuxt-link>
+        <nuxt-link to="/contact" class="nav-link">Contact Us</nuxt-link>
+        <nuxt-link to="/contact" class="nav-link">Contact Us</nuxt-link>
       </nav>
     </div>
   </div>
@@ -35,7 +38,6 @@
   color: #F3CB60;
   font-size: 3rem;
   font-family: 'Italianno', cursive;
-  margin: 0;
 }
 
 .nav-wrapper {
@@ -43,7 +45,7 @@
   padding: 5px 10px; /* Reduce padding for a more compact design */
   border-radius: 0 0 30px 30px;
   margin-top: -20px;
-  width: fit-content;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -52,8 +54,9 @@
 
 .nav-links {
   display: flex;
+  font-size: 8px;
   justify-content: space-around;
-  gap: 10px; /* Reduce gap between links */
+  gap: 5px; /* Reduce gap between links */
 }
 
 .nav-link {

@@ -1,73 +1,102 @@
 <template>
-  <div>
-    <header class="header-container">
-      <div class="header-content">
-        <h1 class="header-title">Happy Birthday</h1>
+  <div class="min-h-screen w-full md:w-[430px] mx-auto p-4 bg-cover bg-center animate-fade-in">
+    <!-- Happy Birthday Section -->
+    <div class="flex flex-col items-center justify-center pt-5 text-center animate-pulse">
+      <div class="day text-[24px]">Happy</div>
+      <div class="day text-[40px]">Birthday</div>
+    </div>
+
+    <!-- Bouncing Images Section -->
+    <div class="flex justify-around pt-7 z-1">
+      <div class="animate-bounce">
+        <img class="w-[90px] h-[80px]" src="/img/Rectangle 162.png" alt="Rectangle 162">
+        <img class="w-[90px] h-[80px]" src="/img/Group 5.png" alt="Group 5">
       </div>
-    </header>
-    <div class="nav-wrapper">
-      <nav class="nav-links">
-        <nuxt-link to="/" class="nav-link">HOner</nuxt-link>
-        <nuxt-link to="/about" class="nav-link">About</nuxt-link>
-        <nuxt-link to="/account" class="nav-link">Account</nuxt-link>
-        <nuxt-link to="/themes" class="nav-link">Themes</nuxt-link>
-        <nuxt-link to="/contact" class="nav-link">Contact Us</nuxt-link>
-      </nav>
+
+      <div class="h-[300px] w-[150px] border-[2px]"></div>
+
+      <div class="animate-bounce">
+        <img class="w-[90px] h-[80px]" src="/img/Rectangle 162.png" alt="Rectangle 162">
+        <img class="w-[90px] h-[80px]" src="/img/Group 5.png" alt="Group 5">
+      </div>
+    </div>
+
+    <!-- Scrollable Image Section with hover effects -->
+    <div class="overflow-auto flex gap-3 snap-x pt-4">
+      <img class="w-[200px] h-[150px] snap-center hover:scale-105 transition-transform duration-300 ease-in-out"
+        src="https://images.unsplash.com/photo-1540206351-d6465b3ac5c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80" />
+      <img class="w-[200px] h-[150px] snap-center hover:scale-105 transition-transform duration-300 ease-in-out"
+        src="https://images.unsplash.com/photo-1540206351-d6465b3ac5c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80" />
+    </div>
+
+    <!-- YouTube Video Section with fade in effect -->
+    <div class="flex justify-center items-center py-4 animate-fade-in">
+      <iframe width="298" height="169" src="https://www.youtube.com/embed/n26NXNYbQG8"></iframe>
+    </div>
+
+    <!-- Grid of Notes Section with hover effects -->
+    <div class="grid grid-cols-3 gap-4">
+      <!-- First row -->
+      <img class="w-full hover:scale-105 transition-transform duration-300 ease-in-out" src="../img/lazy.png" alt="Lazy" />
+      <img class="w-full hover:scale-105 transition-transform duration-300 ease-in-out" src="../img/isaac.png" alt="Isaac" />
+      <img class="w-full hover:scale-105 transition-transform duration-300 ease-in-out" src="../img/ice.png" alt="Ice" />
+      
+      <!-- Second row -->
+      <img class="w-full hover:scale-105 transition-transform duration-300 ease-in-out" src="../img/boss.png" alt="Boss" />
+      <img class="w-full hover:scale-105 transition-transform duration-300 ease-in-out" src="../img/kapi.png" alt="Kapi" />
+      <img class="w-full hover:scale-105 transition-transform duration-300 ease-in-out" src="../img/oliver.png" alt="Oliver" />
+
+      <!-- Third row -->
+      <img class="w-full hover:scale-105 transition-transform duration-300 ease-in-out" src="../img/fin.png" alt="Fin" />
+      <img class="w-full hover:scale-105 transition-transform duration-300 ease-in-out" src="../img/sun.png" alt="Sun" />
+      <img class="w-full hover:scale-105 transition-transform duration-300 ease-in-out" src="../img/kiw.png" alt="Kiw" />
+
+      <!-- Fourth row -->
+      <img class="w-full hover:scale-105 transition-transform duration-300 ease-in-out" src="../img/earth.png" alt="Earth" />
+      <img class="w-full hover:scale-105 transition-transform duration-300 ease-in-out" src="../img/kasalong.png" alt="Kasalong" />
+      <img class="w-full hover:scale-105 transition-transform duration-300 ease-in-out" src="../img/negan.png" alt="Negan" />
+
+      <!-- Fifth row -->
+      <img class="w-full hover:scale-105 transition-transform duration-300 ease-in-out" src="../img/bar.png" alt="Bar" />
+      <img class="w-full hover:scale-105 transition-transform duration-300 ease-in-out" src="../img/few.png" alt="Few" />
+      <img class="w-full hover:scale-105 transition-transform duration-300 ease-in-out" src="../img/daja.png" alt="Daja" />
+
+      <!-- Sixth row (with centered Sorry image) -->
+      <div></div>
+      <img class="w-full mx-auto hover:scale-105 transition-transform duration-300 ease-in-out" src="../img/Sorry.png" alt="Sorry" />
+      <div></div>
     </div>
   </div>
 </template>
 
 <script setup>
-  // Any additional script can go here
+// Script logic if needed
 </script>
 
-<style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Italianno&family=Inter:wght@400;700&display=swap');
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 
-.header-container {
-  background-color: #094037;
-  border-top: 4px solid #F3CB60;
-  padding: 20px;
-  text-align: center;
+body {
+  background-image: url('/img/ma.png');
+  background-size: cover;
 }
 
-.header-title {
-  color: #F3CB60;
-  font-size: 3rem;
-  font-family: 'Italianno', cursive;
-  margin: 0;
+.day {
+  font-family: 'Kaushan Script', cursive;
+  color: white;
 }
 
-.nav-wrapper {
-  background-color: #F3CB60;
-  padding: 5px 10px; /* Reduce padding for a more compact design */
-  border-radius: 0 0 30px 30px;
-  margin-top: -20px;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  display: flex;
-  justify-content: center;
+/* Custom Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.nav-links {
-  display: flex;
-  justify-content: space-around;
-  gap: 10px; /* Reduce gap between links */
-}
-
-.nav-link {
-  color: #05705F;
-  padding: 8px 16px; /* Adjust padding for more compact links */
-  border-radius: 10px;
-  font-family: 'Inter', sans-serif;
-  font-weight: bold;
-  text-transform: uppercase;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.nav-link:hover {
-  background-color: #05705F;
-  color: #F3CB60;
+.animate-fade-in {
+  animation: fadeIn 1s ease-in-out;
 }
 </style>

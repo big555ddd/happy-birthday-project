@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen w-full md:w-[430px] mx-auto p-4 bg-cover bg-center animate-fade-in">
+  <div class="min-h-screen w-full md:w-[430px] mx-auto p-4 bg-cover bg-center animate-fade-in background-container">
     <!-- Happy Birthday Section -->
     <div class="flex flex-col items-center justify-center pt-5 text-center animate-pulse">
       <div class="day text-[24px]">Happy</div>
@@ -21,12 +21,13 @@
       </div>
     </div>
 
-    <!-- Scrollable Image Section with hover effects -->
-    <div class="overflow-auto flex gap-3 snap-x pt-4">
-      <img class="w-[200px] h-[150px] snap-center hover:scale-105 transition-transform duration-300 ease-in-out"
-        src="https://images.unsplash.com/photo-1540206351-d6465b3ac5c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80" />
-      <img class="w-[200px] h-[150px] snap-center hover:scale-105 transition-transform duration-300 ease-in-out"
-        src="https://images.unsplash.com/photo-1540206351-d6465b3ac5c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80" />
+    <!-- 3D Image Carousel Section with auto-slide and controlled gaps -->
+    <div class="carousel-container overflow-hidden flex justify-center pt-4">
+      <div class="carousel">
+        <div class="carousel-item" v-for="(image, index) in images" :key="index" :style="getRotationStyle(index)">
+          <img :src="image" class="carousel-image" alt="carousel image" />
+        </div>
+      </div>
     </div>
 
     <!-- YouTube Video Section with fade in effect -->
@@ -70,15 +71,44 @@
 </template>
 
 <script setup>
-// Script logic if needed
+import { ref, onMounted } from 'vue'
+
+// List of images for the 3D carousel
+const images = [
+  "https://images.unsplash.com/photo-1540206351-d6465b3ac5c1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80",
+  "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80",
+  "https://images.unsplash.com/photo-1521747116042-5a810fda9664?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80",
+  "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=320&h=160&q=80",
+]
+
+// Function to calculate the rotation for each image
+const getRotationStyle = (index) => {
+  const angle = (360 / images.length) * index
+  return {
+    transform: `rotateY(${angle}deg) translateZ(220px)`, // Reduced translateZ value to reduce gap
+  }
+}
+
+// Auto-rotate carousel
+onMounted(() => {
+  const carousel = document.querySelector('.carousel')
+  let angle = 0
+
+  setInterval(() => {
+    angle -= 1 // Rotate slowly
+    carousel.style.transform = `rotateY(${angle}deg)`
+  }, 30) // Adjust the speed of rotation
+})
 </script>
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
-
-body {
+<style scoped>
+/* Apply background to the container */
+.background-container {
   background-image: url('/img/ma.png');
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh; /* Ensure it covers the full height */
 }
 
 .day {
@@ -86,7 +116,42 @@ body {
   color: white;
 }
 
-/* Custom Animations */
+/* Styling for carousel container with perspective */
+.carousel-container {
+  perspective: 1000px;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Carousel container that rotates */
+.carousel {
+  width: 400px;
+  height: 300px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  transition: transform 1s;
+}
+
+/* Each carousel item */
+.carousel-item {
+  position: absolute;
+  width: 220px; /* Reduced width to bring images closer */
+  height: 150px;
+  backface-visibility: hidden;
+}
+
+/* Images within the carousel */
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

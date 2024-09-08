@@ -77,7 +77,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 
 body{
-  background-image:url(/img/main.png) ;
+  background-image:url(/img/ma.png) ;
   background-size: cover;
 }
 

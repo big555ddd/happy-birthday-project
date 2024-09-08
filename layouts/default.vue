@@ -103,18 +103,15 @@ onMounted(() => {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
 /* Apply background to the container */
 .background-container {
-  background-image: url('/img/ma.png');
-  background-size: cover;      /* Ensures the image covers the entire screen */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Ensures no repeat */
-  min-height: 100vh;            /* Covers the full viewport height */
-  width: 100%;                  /* Ensures full width */
+  background-image:url(/img/ma.png) ;
+  background-size: cover;     /* Ensures the image covers the entire screen */                /* Ensures full width */
 }
 
 .day {
-  font-family: 'Kaushan Script', cursive;
+  font-family: Kaushan Script;
   color: white;
 }
 
